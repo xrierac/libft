@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:42:20 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/24 09:47:52 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:55:58 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char *str;
+	unsigned char	*str;
 
 	str = s;
 	while (n > 0)
