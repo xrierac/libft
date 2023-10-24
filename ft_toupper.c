@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 14:38:31 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/24 17:23:03 by xriera-c         ###   ########.fr       */
+/*   Created: 2023/10/24 16:58:08 by xriera-c          #+#    #+#             */
+/*   Updated: 2023/10/24 17:01:48 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int	ft_isalpha(int c);
-int	ft_islower(int c);
-int	ft_isupper(int c);
-
-#endif
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		return (c - 32);
+	else
+		return (c);
+}
