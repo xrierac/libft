@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:58:06 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/24 11:45:55 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/24 11:56:28 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	*memcpy(void *dst, const void *src, size_t n)
 {
-	DELETEme
+	
 }
