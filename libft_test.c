@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:29 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 12:18:08 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:27:51 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,5 @@ int	main(void)
 	isdigit_test();
 	isalnum_test();
 
-	return (1);
+	return (0);
 }
