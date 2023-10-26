@@ -104,5 +104,6 @@ int	main(void)
 	isdigit_test();
 	isalnum_test();
 	isascii_test();
+	
 	return (0);
 }
