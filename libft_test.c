@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:29 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 10:53:08 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:09:46 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,27 @@ int	isdigit_test(void)
 	return (0);
 }
 
+int	isalnum_test()
+{
+	int arr[] = {'d', '2', '\t', ' ', 'h', '+', '&'};
+	int i = 0;
+
+	while (i < 7)
+	{
+		if (ft_isalnum(arr[i]))
+			printf("%c is alnum\n", arr[i]);
+		else
+			printf("%c is not alnum\n", arr[i]);
+		i++;
+	}
+	return (0);
+}
+
 int	main(void)
 {
 	isalpha_test();
 	isdigit_test();
+	isalnum_test();
+
 	return (0);
 }
