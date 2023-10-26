@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 15:50:42 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/25 12:06:34 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 17:46:14 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,28 @@
 
 size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-        size_t  i;
+	unsigned int	i;
+	unsigned int	j;
+	size_t			lendest;
+	size_t			lensrc;
 
-        i = 0;
-        if (dstsize > 0)
-        {
-                while (dst[i])
-                        i++;
-                while (src[i] && i < (dstsize - 1))
-                {
-                        dst[i] = src[i];
-                        i++;
-                }
-                dst[i] = '\0';
-        }
-        while (src[i])
-                i++;
-        return (i);
+	i = 0;
+	j = 0;
+	while (dst[i])
+		i++;
+	lendest = i;
+	while (src[j])
+		j++;
+	lensrc = j;
+	j = 0;
+	if (dstsize == 0 || lendest >= dstsize)
+		return (dstsize + lensrc);
+	while (src[j] && j < (dstsize - lendest - 1))
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (lendest + lensrc);
 }

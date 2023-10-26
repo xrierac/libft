@@ -18,7 +18,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 all: $(NAME)
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
