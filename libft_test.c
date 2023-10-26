@@ -6,12 +6,14 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:29 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 12:27:51 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:15:44 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 int isalpha_test(void)
 {
@@ -82,11 +84,25 @@ int	isalnum_test()
 	return (0);
 }
 
+int	isascii_test()
+{
+	int ch;
+	
+	for (ch = 0x7c; ch <= 0x82; ch++) {
+	   	printf("%#04x    ", ch);
+		if (ft_isascii(ch))
+			printf("The character is %c\n", ch);
+		else
+			printf("Cannot be represented by an ASCII character\n");
+	}
+   return 0;
+}
+
 int	main(void)
 {
 	isalpha_test();
 	isdigit_test();
 	isalnum_test();
-
+	isascii_test();
 	return (0);
 }
