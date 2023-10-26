@@ -88,5 +88,5 @@ int	main(void)
 	isdigit_test();
 	isalnum_test();
 
-	return (1);
+	return (0);
 }
