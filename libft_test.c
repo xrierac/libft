@@ -6,14 +6,15 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:29 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 10:15:28 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 10:53:08 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int main () {
+int isalpha_test(void)
+{
    int var1 = 'd';
    int var2 = '2';
    int var3 = '\t';
@@ -44,4 +45,30 @@ int main () {
    }
    
    return(0);
+}
+
+int	isdigit_test(void)
+{
+	int var1 = 'h';
+	int var2 = '2';
+
+   if(ft_isdigit(var1) ) {
+      printf("var1 = |%c| is a digit\n", var1 );
+   } else {
+      printf("var1 = |%c| is not a digit\n", var1 );
+   }
+
+   if( ft_isdigit(var2) ) {
+      printf("var2 = |%c| is a digit\n", var2 );
+   } else {
+      printf("var2 = |%c| is not a digit\n", var2 );
+   }
+	return (0);
+}
+
+int	main(void)
+{
+	isalpha_test();
+	isdigit_test();
+	return (0);
 }
