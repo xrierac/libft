@@ -1,21 +1,19 @@
-OBJ_DIR = .
-BIN_DIR = .
-NAME = $(BIN_DIR)/libft_test
-INC_DIR = .
-SRC_DIR = .
+NAME = libft.a
 
-SRCS = $(wildcard $(SRC_DIR)/*.c)
-OBJECTS = $(wildcard $(OBJ_DIR)/*.o)
-
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME) : $(OBJECTS)
-	cc $(CFLAGS) $(OBJECTS) -o $(NAME)
+SRC_DIR = .
+OBJ_DIR = .
 
-$(OBJ_DIR)/%.o : $(SRC_DIR)/%.c
-	cc -c $(CFLAGS) $< -o $@
+SRCS := $(wildcard $(SRC_DIR)/*.c)
+OBJS := $(SRCS:.c=.o)
 
-.PHONY : all clean fclean re
+$(NAME) : $(OBJS)
+	ar rcs $(NAME) $(OBJS)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	cc $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
@@ -26,3 +24,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY : all clean fclean re

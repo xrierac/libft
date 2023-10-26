@@ -6,13 +6,13 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:52:14 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/24 15:37:38 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/26 16:49:34 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+/*void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-
-}
+	return (0);
+}*/
