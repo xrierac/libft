@@ -6,7 +6,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRC_DIR = .
 OBJ_DIR = .
 
-SRCS := $(wildcard $(SRC_DIR)/*.c)
+SRCS := $(wildcard $(SRC_DIR)/*.c) // Need to change
 OBJS := $(SRCS:.c=.o)
 
 $(NAME) : $(OBJS)
