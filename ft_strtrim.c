@@ -12,16 +12,26 @@
 
 #include "libft.h"
 
-/*char	*ft_strtrim(char const *s1, char const *set)
+static int	in_set(char c, char const *set)
 {
-	char			*substring;
-	unsigned int	i;
+	while (*set)
+		if (c == *set++)
+			return (1);
+	return (0);
+}
 
-	i = 0;
-	substring = (char *)malloc();
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str;
+	size_t	start;
+	size_t	end;
 
-	while (*s1 == set[i])
-	{
-
-	}
-}*/
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	while (in_set(s1[start], set))
+		start++;
+	while (in_set(s1[end], set))
+		end--;
+	str = ft_substr(s1[start], end - start);
+	return (str);
+}
