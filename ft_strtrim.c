@@ -32,6 +32,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (in_set(s1[end], set))
 		end--;
-	str = ft_substr(s1[start], end - start);
+	str = ft_substr(s1, start,  end - start);
 	return (str);
 }

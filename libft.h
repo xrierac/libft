@@ -22,6 +22,8 @@ int	ft_isdigit(int c);
 int	ft_isalnum(int c);
 int ft_isascii(int c);
 int ft_isprint(int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 size_t	ft_strlen(const char *s);
 
 #endif
