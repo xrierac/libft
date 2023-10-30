@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:38:31 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/30 14:19:21 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:00:49 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <stdlib.h>
 
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t count, size_t size);
 int	ft_isalpha(int c);
 int	ft_islower(int c);
 int	ft_isupper(int c);
@@ -24,7 +26,6 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 int ft_tolower(int c);
 int	ft_toupper(int c);
-void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
