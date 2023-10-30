@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:52:14 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/30 09:40:58 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:39:33 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	return (0);
+	unsigned char		*dst2;
+	const unsigned char	*src2;
+	int					i;
+
+	i = len - 1;
+	if (dst > src && (dst - src) < i)
+	{
+		dst2 = dst;
+		src2 = src;
+		while (i >= 0)
+		{
+			dst2[i] = src2[i];
+			i--;
+		}
+	}
+	else
+		return (ft_memcpy(dst, src, len));
+	return (dst);
 }
