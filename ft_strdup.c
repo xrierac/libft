@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:39:16 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/31 11:53:23 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:31:54 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,16 @@
 char	*ft_strdup(const char *s)
 {
 	char	*str;
-	int	i;
+	int		i;
 
 	i = 0;
 	str = malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (0);
-	while (*s)
+	while (s[i])
 	{
-		str[i] = (char)s;
+		str[i] = (char)s[i];
 		i++;
-		s++;
 	}
 	str[i] = '\0';
 	return (str);

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:58:33 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/30 16:18:12 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/31 14:29:50 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t count, size_t size)
 	while (len > 0)
 	{
 		str[i++] = '\0';
-		len --;
+		len--;
 	}
 	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:52:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/30 12:40:27 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/31 15:45:16 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*string;
-	
+
 	string = s;
 	while (n > 0)
 	{
