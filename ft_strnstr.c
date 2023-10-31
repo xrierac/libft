@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:54:31 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/31 16:24:28 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/31 16:43:57 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 
-
-	while (len > 0 && *haystack != '\0')
+	if ((!*haystack || !*needle) && len == 0)
+		return ((char *)haystack);
+	while (len > 0 && *haystack)
 	{
 		i = 0;
-		while (haystack[i] == needle[i])
-			i++;
-		if (needle[i] == '\0')
-			return ((char *)haystack);
+		if (haystack[i] == needle[i])
+			;
+		len++;
 		haystack++;
-		len--;
 	}
 	return (0);
 }
