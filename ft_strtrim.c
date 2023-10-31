@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:15:47 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 16:50:10 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/10/31 18:25:43 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
+	if (!s1 || !set)
+		return (ft_strdup(""));
 	start = 0;
 	end = ft_strlen(s1) - 1;
 	while (in_set(s1[start], set))
 		start++;
 	while (in_set(s1[end], set))
 		end--;
-	str = ft_substr(s1, start,  end - start);
+	str = ft_substr(s1, start, end - start + 1);
 	return (str);
 }
