@@ -6,13 +6,13 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 18:42:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 11:49:03 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/01 11:59:02 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	if (s && fd)
 	{
@@ -21,5 +21,6 @@ void	ft_putstr_fd(char *s, int fd)
 			write(fd, s, 1);
 			s++;
 		}
+		write(fd, "\n", 1);
 	}
 }

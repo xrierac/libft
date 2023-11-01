@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 18:42:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 11:49:03 by xriera-c         ###   ########.fr       */
+/*   Created: 2023/11/01 12:20:58 by xriera-c          #+#    #+#             */
+/*   Updated: 2023/11/01 12:31:40 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if (s && fd)
-	{
-		while (*s)
-		{
-			write(fd, s, 1);
-			s++;
-		}
-	}
+
 }

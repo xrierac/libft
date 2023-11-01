@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 18:42:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 11:49:03 by xriera-c         ###   ########.fr       */
+/*   Created: 2023/11/01 12:06:55 by xriera-c          #+#    #+#             */
+/*   Updated: 2023/11/01 12:18:43 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (s && fd)
+	long	i;
+
+	i = n;
+	if (i < 0)
 	{
-		while (*s)
-		{
-			write(fd, s, 1);
-			s++;
-		}
+		ft_putchar_fd('-', fd);
+		i = -i;
 	}
+	if (i > 9)
+	{
+		ft_putnbr_fd(i / 10, fd);
+		ft_putchar_fd(i % 10 + '0', fd);
+	}
+	else if (i < 10)
+		ft_putchar_fd(i + '0', fd);
 }
