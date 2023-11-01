@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 14:52:14 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/30 10:39:33 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:55:41 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	int					i;
 
 	i = len - 1;
-	if (dst > src && (dst - src) < i)
+	if (dst > src && (dst - src) <= i)
 	{
 		dst2 = dst;
 		src2 = src;
