@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 10:00:29 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/26 15:15:44 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:26:46 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,17 @@ int	isascii_test()
    return 0;
 }
 
+int	test_ft_substr()
+{
+	
+}
+
 int	main(void)
 {
 	isalpha_test();
 	isdigit_test();
 	isalnum_test();
 	isascii_test();
-	
+	test_ft_substr();	
 	return (0);
 }

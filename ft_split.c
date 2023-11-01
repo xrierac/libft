@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/30 15:58:33 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 16:17:19 by xriera-c         ###   ########.fr       */
+/*   Created: 2023/11/01 14:10:16 by xriera-c          #+#    #+#             */
+/*   Updated: 2023/11/01 14:50:56 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+/*
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	**ft_split(char const *s, char c)
 {
-	size_t	len;
-	int		i;
 	char	*str;
+	char	**arr;
 
-	i = 0;
-	if ((count > 2147483648 && size > 1) || (count > 1 && size > 2147483648))
-		return (0);
-	len = count * size;
-	if (len > 2147483648)
-		return (0);
-	str = malloc(len);
-	if (!str)
-		return (0);
-	while (len > 0)
-	{
-		str[i++] = '\0';
-		len--;
-	}
-	return (str);
-}
+	
+	}*/

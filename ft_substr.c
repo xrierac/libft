@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:04:32 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/10/31 17:24:19 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:19:58 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 	char			*substring;
 
-	if (!s || start >= ft_strlen(s))
+	if (!s || start >= ft_strlen(s) || len == 0)
 		return (ft_strdup(""));
 	i = 0;
 	substring = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substring)
 		return (0);
-	while ((len - i) > 0 && start <= ft_strlen(s))
+	while ((len - i) > 0)
 	{
 		substring[i] = s[start + i];
 		i++;
