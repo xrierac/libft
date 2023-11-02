@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:10:16 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 14:50:56 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/02 15:20:11 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,30 @@ static int	get_number_words(char const *s, char c)
 		
 char	**ft_split(char const *s, char c)
 {
-	char	*str;
 	char	**arr;
-	size_t	end;
+	size_t	start;
 	size_t	i;
+	size_t	j;
 
-	while (*s)
+	arr = malloc(sizeof(char) * (get_number_words(s, c) + 1));
+	if (!arr)
+		return (0);
+	start = 0;
+	j = 0;
+	while (s[start])
 	{
-		i = 0;
-		while (s[i++] != c)
-			end = i;
-		if (i > 1)
+		if (s[start] == c)
+			start++;
+		else
 		{
-			ft_substr(*s, 0, end);
+			i = 0;
+			while (s[start + i] != c && s[start + i])
+				i++;
+			arr[j] = ft_substr(s, start, i);
+			j++;
+			start = start + i;
+		}
 	}
+	arr[j] = 0;
+	return (arr);
 }
