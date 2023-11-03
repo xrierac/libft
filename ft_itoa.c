@@ -10,14 +10,11 @@ char	*ft_itoa(int n)
 	if (!str)
 		return (0);
 	if (n < 0)
-	{
 		sign = - 1;
 	else
 		sign = 1;
 	i = sign * n;
 	while (i != 0)
-	{
-		
-	}
+		i++;
 	return (&str[0]);
-
+}
