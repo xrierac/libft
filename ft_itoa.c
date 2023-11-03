@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 13:01:22 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/03 13:05:05 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:01:29 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 int	sizeint(int n)
 {
 	int	i;
-	
+
 	if (n <= 0)
-		i = 1;
+		i = 2;
 	else
-		i = 0;
+		i = 1;
 	while (n != 0)
 	{
 		i++;
@@ -30,19 +30,29 @@ int	sizeint(int n)
 
 char	*ft_itoa(int n)
 {
-	char		*str;
+	char			*str;
+	unsigned int	num;
+	int				sign;
 	unsigned int	i;
-	unsigned int	sign;
 
+	if (n == 0)
+		return (ft_strdup("0"));
 	str = malloc(sizeof(char) * sizeint(n));
 	if (!str)
 		return (0);
 	if (n < 0)
-		sign = - 1;
+		sign = -1;
 	else
 		sign = 1;
-	i = sign * n;
-	while (i != 0)
-		i++;
-	return (&str[0]);
+	num = sign * n;
+	i = 0;
+	while (num != 0)
+	{
+		str[i++] = (num % 10) + '0';
+		num = num / 10;
+	}
+	if (sign == -1)
+		str[i++] = '-';
+	str[i] = '\0';
+	return (ft_strrev(str));
 }
