@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 11:15:31 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/04 13:10:36 by xriera-c         ###   ########.fr       */
+/*   Created: 2023/11/04 10:47:43 by xriera-c          #+#    #+#             */
+/*   Updated: 2023/11/04 12:03:38 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return (0);
-	while ((lst -> next) != 0)
-		lst = lst -> next;
-	return (lst);
+	new -> next = *lst;
+	*lst = new;
 }
