@@ -6,11 +6,11 @@
 /*   By: xriera-c <xriera-c@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 14:38:31 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/03 14:15:35 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/04 10:44:08 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
+#ifndef	LIBFT_H
 # define LIBFT_H
 
 #include <stdlib.h>
@@ -54,10 +54,24 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
+/*List functions*/
+
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lastadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+
 
 # endif
