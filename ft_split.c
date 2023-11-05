@@ -33,11 +33,30 @@ static int	get_number_words(char const *s, char c)
 	return (i);
 }
 
+int	free_memory(char **arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i])
+		free(arr[i++]);
+	free(arr);
+	return (0);
+}
+
+char	*get_word(char const *s, char c)
+{
+	int	i;
+
+	i = 0;
+	while (s[i] != c && s[i])
+		i++;
+	return (ft_substr(s, 0, i));
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
-	size_t	start;
-	size_t	i;
 	int		j;
 
 	if (!s)
@@ -45,26 +64,17 @@ char	**ft_split(char const *s, char c)
 	arr = malloc(sizeof(char *) * (get_number_words(s, c) + 1));
 	if (!arr)
 		return (0);
-	start = 0;
 	j = -1;
-	while (s[start])
+	while (*s)
 	{
-		if (s[start] == c)
-			start++;
+		if (*s == c)
+			s++;
 		else
 		{
-			i = 0;
-			while (s[start + i] != c && s[start + i])
-				i++;
-			arr[++j] = ft_substr(s, start, i);
+			arr[++j] = get_word(s, c);
 			if (arr[j] == 0)
-			{
-				while (j >= 0)
-					free(arr[j--]);
-				free(arr);
-				return (0);
-			}
-			start = start + i;
+				return (free_memory(arr));
+			s = s + ft_strlen(arr[j]);
 		}
 	}
 	arr[++j] = 0;
