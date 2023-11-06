@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 09:15:46 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/06 09:15:49 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/06 14:19:14 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlist;
 	t_list	*newnode;
+	void	*fresult;
 
-	if (!lst)
+	if (!lst || !del || !f)
 		return (0);
 	newlist = 0;
 	while (lst)
 	{
-		newnode = ft_lstnew(f(lst->content));
+		fresult = f(lst->content);
+		newnode = ft_lstnew(fresult);
 		if (newnode == 0)
 		{
+			del(fresult);
 			ft_lstclear(&newlist, del);
 			return (0);
 		}
