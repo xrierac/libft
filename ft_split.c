@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 14:10:16 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/03 18:25:06 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/06 08:35:30 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	get_number_words(char const *s, char c)
 	return (i);
 }
 
-int	free_memory(char **arr)
+char	**free_memory(char **arr)
 {
 	int	i;
 
