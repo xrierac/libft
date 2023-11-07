@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 11:29:52 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/06 11:40:59 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:24:31 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ int	ft_atoi(const char *nptr)
 	while (ft_isdigit(*nptr))
 	{
 		i = (i * 10) + (*nptr - '0');
-		if (i > 9223372036854775807)
+		if (i > 9223372036854775807 && sign == 1)
 			return (-1);
+		else if (i > 9223372036854775807 && sign == -1)
+			return (0);
 		nptr++;
 	}
 	return ((int)(i * sign));
