@@ -23,14 +23,17 @@ $(NAME) : $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS) $(BONUSOBJS)
+	rm -f $(OBJS) $(BONUSOBJS) .bonus
 
 fclean: clean 
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUSOBJS)
+bonus : .bonus
+
+.bonus: $(OBJS) $(BONUSOBJS)
 	ar rcs $(NAME) $?
+	touch .bonus
 
 .PHONY : all clean fclean re bonus
