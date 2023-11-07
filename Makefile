@@ -1,5 +1,4 @@
 NAME = libft.a
-BONUS = libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
@@ -13,17 +12,13 @@ SRCS := ft_isspace.c ft_putstr_fd.c ft_strncmp.c ft_atoi.c ft_isupper.c ft_split
 BONUSSRCS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUSOBJS := $(BONUSSRCS:.c=.o)
-
 OBJS := $(SRCS:.c=.o)
 
 $(NAME) : $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+%.o:%.c
 	cc $(CFLAGS) -c $< -o $@
-
-$(BONUS) : $(BONUSOBJS)
-	ar rcs $(NAME) $(OBJS) $(BONUSOBJS)
 
 all: $(NAME)
 
@@ -35,7 +30,7 @@ fclean: clean
 
 re: fclean all
 
-bonus:
-	rm -f $(NAME)
+bonus: $(OBJS) $(BONUSOBJS)
+	ar rcs $(NAME) $?
 
 .PHONY : all clean fclean re bonus
