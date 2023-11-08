@@ -22,8 +22,6 @@ void	*ft_calloc(size_t count, size_t size)
 	if ((count > 2147483648 && size > 1) || (count > 1 && size > 2147483648))
 		return (0);
 	len = count * size;
-	if (len > 2147483648)
-		return (0);
 	str = malloc(len);
 	if (!str)
 		return (0);

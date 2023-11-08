@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	sizeint(int n)
+static int	sizeint(int n)
 {
 	int	i;
 

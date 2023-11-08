@@ -33,7 +33,7 @@ static int	get_number_words(char const *s, char c)
 	return (i);
 }
 
-char	**free_memory(char **arr)
+static char	**free_memory(char **arr)
 {
 	int	i;
 
@@ -44,7 +44,7 @@ char	**free_memory(char **arr)
 	return (0);
 }
 
-char	*get_word(char const *s, char c)
+static char	*get_word(char const *s, char c)
 {
 	int	i;
 
