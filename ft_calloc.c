@@ -6,11 +6,12 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:58:33 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/01 16:17:19 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:42:15 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
@@ -19,7 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	char	*str;
 
 	i = 0;
-	if ((count > 2147483648 && size > 1) || (count > 1 && size > 2147483648))
+	if ((count > (INT_MAX + 1) && size > 1) || (count > 1 && size > (INT_MAX + 1)))
 		return (0);
 	len = count * size;
 	str = malloc(len);
